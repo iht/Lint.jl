@@ -4,11 +4,10 @@ os:
     - linux
     - osx
 julia:
-    - 0.5
-    - 0.6
+    - 0.6.2
     - nightly
 notifications:
-    email: false
+    email: true
 after_success:
     - julia -e 'cd(Pkg.dir("Lint")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())';
 script:
